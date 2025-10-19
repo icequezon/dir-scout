@@ -1,4 +1,4 @@
-i# Dir-Scout 🕵️‍♂️
+# Dir-Scout 🕵️‍♂️
 
 **Dir-Scout** is a lightweight, Linux-native directory watcher that detects file system changes and sends structured messages to a **Redis Stream**. Built for developers and systems that need real-time event tracking on file activity — with minimal overhead and maximum flexibility.
 
