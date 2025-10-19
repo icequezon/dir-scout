@@ -9,7 +9,7 @@ WATCH_DIR="/watched"
 echo "Watching directory recursively: $WATCH_DIR"
 source .venv/bin/activate
 
-inotifywait -m -r "$WATCH_DIR" -e create -e modify -e delete |
+inotifywait -m -r "$WATCH_DIR" |
 while read path action file; do
     echo "Detected $action on $file in $path"
     python main.py "$path$file" "$action"
