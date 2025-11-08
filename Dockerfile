@@ -10,6 +10,7 @@ RUN uv venv --clear
 RUN uv pip install .
 
 COPY watch.sh main.py ./
+COPY src ./src
 
 FROM python:3.11-alpine AS final
 
@@ -19,6 +20,7 @@ COPY --from=builder /app /app
 
 RUN apk add --no-cache inotify-tools
 
+ENV PATH="/app/.venv/bin:$PATH" 
+
 RUN mkdir /watched
-RUN chmod +x watch.sh
-CMD ["sh", "./watch.sh"]
+CMD ["python", "-m", "main"]
