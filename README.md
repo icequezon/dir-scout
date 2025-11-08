@@ -21,6 +21,7 @@ docker run -d \
   -e WATCH_DIR=/watched/dir \
   -e REDIS_URL=redis://your.redis.host:6379 \
   -e REDIS_STREAM=dir_events \
+  -e EXCLUDE_REGEX=false \
   -v /your/local/dir:/watched/dir \
   --name dir-scout \
   aisukezon/dir-scout
