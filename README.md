@@ -19,9 +19,9 @@
 ```bash
 docker run -d \
   -e WATCH_DIR=/watched/dir \
-  -e REDIS_URL=redis://your.redis.host:6379 \
+  -e REDIS_HOST=your.redis.host \
   -e REDIS_STREAM=dir_events \
-  -e EXCLUDE_REGEX=false \
+  -e INCLUDE_DOTFILES=false \
   -v /your/local/dir:/watched/dir \
   --name dir-scout \
   aisukezon/dir-scout
