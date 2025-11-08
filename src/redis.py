@@ -4,17 +4,17 @@ import os
 from src.logger import logger
 
 
-REDIS_URL = os.getenv("REDIS_URL")
+REDIS_HOST = os.getenv("REDIS_HOST")
 REDIS_PORT = os.getenv("REDIS_PORT")
 REDIS_STREAM = os.getenv("REDIS_STREAM", None)
 
-REDIS_FULL_URL = f"redis://{REDIS_URL}:{REDIS_PORT}"
+REDIS_FULL_URL = f"redis://{REDIS_HOST}:{REDIS_PORT}"
 
 
 def get_redis_client():
     logger.info(f"Initializiing redis client with url: {REDIS_FULL_URL}")
-    if not REDIS_URL or not REDIS_PORT:
-        message = f"Failed to initialize redis client. Missing configuration: {REDIS_URL} : {REDIS_PORT}"
+    if not REDIS_HOST or not REDIS_PORT:
+        message = f"Failed to initialize redis client. Missing configuration: {REDIS_HOST} : {REDIS_PORT}"
         logger.error(message)
         raise Exception(message)
 
