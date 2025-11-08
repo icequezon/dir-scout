@@ -9,7 +9,7 @@ COPY pyproject.toml uv.lock* ./
 RUN uv venv --clear
 RUN uv pip install .
 
-COPY watch.sh main.py ./
+COPY main.py ./
 COPY src ./src
 
 FROM python:3.11-alpine AS final
