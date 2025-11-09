@@ -22,7 +22,7 @@ def main():
         try:
             send_to_redis(redis_client, file_path, action)
         except Exception as e:
-            logger.exception(e)
+            logger.error(f"{e}")
 
 
 if __name__ == "__main__":
